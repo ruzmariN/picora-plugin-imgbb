@@ -1,0 +1,15 @@
+{
+  "packageVersion": 1,
+  "runtime": "http-v2",
+  "entry": "uploader.json",
+  "id": "io.github.ruzmarin.picora.imgbb",
+  "name": "ImgBB 图床",
+  "version": "1.0.0",
+  "description": "使用 ImgBB API Key 上传图片并获取直链。",
+  "author": "迷迭香",
+  "homepage": "https://zh-cn.imgbb.com/",
+  "repository": "https://github.com/ruzmariN/picora-plugin-imgbb",
+  "icon": "assets/icon.svg",
+  "mark": "IB",
+  "color": "#2D79C7"
+}

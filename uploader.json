@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "requires": [
+    "response-conditions"
+  ],
+  "permissions": {
+    "network": [
+      "api.imgbb.com"
+    ],
+    "readSelectedFile": true,
+    "allowInsecureHttp": false
+  },
+  "config": [
+    {
+      "key": "apiKey",
+      "label": "ImgBB API Key",
+      "type": "secret",
+      "required": true,
+      "hint": "在 api.imgbb.com 获取个人 API Key"
+    }
+  ],
+  "upload": {
+    "method": "POST",
+    "url": "https://api.imgbb.com/1/upload",
+    "query": {
+      "key": "${config.apiKey}"
+    },
+    "headers": {
+      "Accept": "application/json"
+    },
+    "body": {
+      "type": "multipart",
+      "fileField": "image"
+    },
+    "response": {
+      "url": "data.url",
+      "thumbnail": "data.thumb.url",
+      "successStatuses": [
+        200
+      ],
+      "success": {
+        "path": "success",
+        "equals": true
+      },
+      "errorMessage": "error.message"
+    },
+    "followRedirects": false,
+    "timeoutSeconds": 120,
+    "errors": {
+      "400": "上传请求或图片不符合 ImgBB 要求，请检查图片格式和大小。",
+      "401": "ImgBB API Key 无效，请检查配置。",
+      "403": "ImgBB 拒绝了上传，请检查 API Key 和账户权限。",
+      "413": "图片超过 ImgBB 允许的大小。",
+      "429": "请求过于频繁，请稍后重试。",
+      "500": "ImgBB 服务异常，请稍后重试。",
+      "502": "ImgBB 网关异常，请稍后重试。",
+      "503": "ImgBB 暂不可用，请稍后重试。"
+    }
+  }
+}
