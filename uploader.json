@@ -15,6 +15,7 @@
       "key": "apiKey",
       "label": "ImgBB API Key",
       "type": "secret",
+      "role": "token",
       "required": true,
       "hint": "在 api.imgbb.com 获取个人 API Key"
     }
