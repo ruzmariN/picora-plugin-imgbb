@@ -5,7 +5,7 @@
 ## 使用方法
 
 1. 前往 [ImgBB API 页面](https://api.imgbb.com/) 获取 API Key。
-2. 在 Picora 1.0.7 或更新版本中导入本插件的 ZIP。
+2. 在 Picora 1.0.8 或更新版本中导入本插件的 ZIP。
 3. 新建「ImgBB 图床」配置，填入 API Key，选择图片上传。
 
 插件只向 `https://api.imgbb.com/1/upload` 发送 POST 请求，请求体为 multipart/form-data，图片字段为 `image`。API Key 作为 `key` 查询参数传递；请妥善保管，勿公开包含它的请求地址。插件不会跟随重定向，也不会自动重传上传请求。
